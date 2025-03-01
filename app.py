@@ -58,6 +58,50 @@ st.markdown("""
     <p style='text-align: center; font-size:18px;'>Enter your symptoms to receive disease predictions and health recommendations.</p>
     """, unsafe_allow_html=True)
 
+# Custom CSS
+st.markdown(
+    """
+    <style>
+    /* Change Navbar background color */
+        header[data-testid="stHeader"] {
+            background-color: #d1dbe4 !important; /* Dark Blue */
+            height: 50px;
+            padding: 10px;
+        }
+
+        /* Change navbar text color */
+        header[data-testid="stHeader"] * {
+            color: white !important;
+        }
+        .stApp {background-color: #d1dbe4; color: black; padding: 20px; border-radius: 10px;}
+        .stButton>button {
+            background-color: #00b4d8;
+            color: white;
+            font-size: 18px;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .title-text {
+                font-size: 40px;
+                font-weight: bold;
+            }
+        .subtitle-text {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        .stButton>button:hover {
+            background-color: #00ffff ;
+            color: black;
+        }
+        .header {text-align: center; font-size: 28px; font-weight: bold; color: #333;}
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 # User input
 selected_symptoms = st.multiselect("Select symptoms", list(symptoms_dict.keys()))
 
@@ -70,7 +114,7 @@ if st.button("Predict Disease"):
         
         # Display results
         st.markdown(f"""
-            <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
+            <div style='background-color: #d1dbe4; padding: 20px; border-radius: 10px;'>
                 <h2 style='color: black;'>Predicted Disease: {predicted_disease}</h2>
                 <p style='font-size:16px;'>{recommendations["Description"]}</p>
             </div>
@@ -79,30 +123,30 @@ if st.button("Predict Disease"):
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("### 🛡️ Precautions")
-            st.markdown('<div style="background-color:#e6ffe6;padding:10px;border-radius:10px;">', unsafe_allow_html=True)
             for pre in recommendations["Precautions"]:
                 st.markdown(f"✅ {pre}")
-            st.markdown("</div>", unsafe_allow_html=True)
 
             st.markdown("### 💊 Medications")
-            st.markdown('<div style="background-color:#ffebcc;padding:10px;border-radius:10px;">', unsafe_allow_html=True)
             med_list = "\n".join([f"- {med}" for med in recommendations["Medications"]])
-            st.markdown(med_list)
-            st.markdown("</div>", unsafe_allow_html=True)
+            st.markdown(f"""
+            <div style='background-color: #ffebcc; padding: 20px; border-radius: 10px;'>
+                <p style='font-size:16px;'>{med_list}</p>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            st.markdown("### 🥗 Diet Plan")
+            diet_list = "\n".join([f"- {diet}" for diet in recommendations["Diet"]])
+            st.markdown(f"""
+            <div style='background-color: #ccf5ff; padding: 20px; border-radius: 10px;'>
+                <p style='font-size:16px;'>{diet_list}</p>
+            </div>
+            """, unsafe_allow_html=True)
         
         with col2:
-            st.markdown("### 🥗 Diet Plan")
-            st.markdown('<div style="background-color:#ccf5ff;padding:10px;border-radius:10px;">', unsafe_allow_html=True)
-            for diet in recommendations["Diet"]:
-                st.markdown(f"🥦 {diet}")
-            st.markdown("</div>", unsafe_allow_html=True)
-
             st.markdown("### 🏋️ Workout Plan")
-            st.markdown('<div style="background-color:#ffe6ff;padding:10px;border-radius:10px;">', unsafe_allow_html=True)
             for workout in recommendations["Workout"]:
                 st.markdown(f"🔵 {workout}")
-            st.markdown("</div>", unsafe_allow_html=True)
-        
+
         st.success("✅ Follow these recommendations for a speedy recovery!")
         
 #Footer

@@ -67,7 +67,7 @@ streamlit run app.py
 ---
 
 ## Project Structure
-
+```bash
 MediGuide/
 │── data/                  # Medical datasets
 │   ├── description.csv
@@ -89,11 +89,14 @@ MediGuide/
 │── app.py                 # Main Streamlit application
 │── requirements.txt       # Required dependencies
 │── README.md              # Documentation
-
+```
 ---
 
 ## Screenshots
 
+![Dashboard Image 1](https://github.com/himanshunagapure/Sentiment-Connect/blob/main/img/dashboard%202020.png)
+
+![Dashboard Image 2](https://github.com/himanshunagapure/Sentiment-Connect/blob/main/img/dashboard%202021.png)
 ---
 
 ## 🤝 Contributing

@@ -85,6 +85,7 @@ MediGuide/
 │── notebook/              # Jupyter Notebook (ML training & analysis)
 │   ├── MediGuide.ipynb
 │
+|── images/                # Images of website
 │── venv/                  # Virtual environment (not included in repo)
 │── app.py                 # Main Streamlit application
 │── requirements.txt       # Required dependencies
@@ -94,9 +95,9 @@ MediGuide/
 
 ## Screenshots
 
-![Dashboard Image 1](https://github.com/himanshunagapure/Sentiment-Connect/blob/main/img/dashboard%202020.png)
+![Dashboard Image 1](https://github.com/himanshunagapure/MediGuide/blob/main/images/mediguide1.png)
 
-![Dashboard Image 2](https://github.com/himanshunagapure/Sentiment-Connect/blob/main/img/dashboard%202021.png)
+![Dashboard Image 2](https://github.com/himanshunagapure/MediGuide/blob/main/images/mediguide2.png)
 ---
 
 ## 🤝 Contributing

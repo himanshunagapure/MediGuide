@@ -2,7 +2,8 @@
 
 MediGuide is an **Personalized healthcare assistant** that predicts possible diseases based on symptoms and provides personalized **medications, diet plans, workout recommendations, and precautions**. It uses **Machine Learning** to offer data-backed health suggestions.
 
-Try (Wake the app, it must be sleeping 😴): 
+### Try (Wake the app, it must be sleeping 😴): 
+
 https://mediguide-recommendations.streamlit.app/
 ---
 

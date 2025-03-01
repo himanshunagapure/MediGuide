@@ -4,7 +4,7 @@ MediGuide is an **Personalized healthcare assistant** that predicts possible dis
 
 ### Try (Wake the app, it must be sleeping 😴): 
 
-https://mediguide-recommendations.streamlit.app/
+### https://mediguide-recommendations.streamlit.app/
 ---
 
 ## 🚀 Features
